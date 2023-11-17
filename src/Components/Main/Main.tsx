@@ -37,7 +37,6 @@ function Main() {
         <Route path="My classes/:selected" element={<Module />} />
       </Routes>
     </div>
-
   )
 }
 

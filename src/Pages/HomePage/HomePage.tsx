@@ -1,4 +1,3 @@
-import { BrowserRouter } from 'react-router-dom'
 import Main from '../../Components/Main/Main'
 import NavBar from '../../Components/NavBar/NavBar'
 import SideBar from '../../Components/SideBar/SideBar'
@@ -21,24 +20,22 @@ export const notify = (toastType: "success" | "info" | "warn" | "error", toastMs
     theme: "dark",
   });
 
-
 function HomePage() {
+  new Notification("Dasdsa")
   return (
     <div className='homepage--container'>
-    <BrowserRouter>
       <ClassesContextProvider>
         <TasksContextProvider>
           <ScheduleContextProvider>
-           <>
+            <>
               <NavBar />
               <Main />
               <SideBar />
               <ToastContainer />
-            </> 
+            </>
           </ScheduleContextProvider>
         </TasksContextProvider>
       </ClassesContextProvider>
-    </BrowserRouter >
     </div >
   )
 }

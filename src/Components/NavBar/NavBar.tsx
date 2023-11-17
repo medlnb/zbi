@@ -40,7 +40,8 @@ function NavBar() {
   if (isTeacher)
     navNames.push({ title: 'Edit', icon: <FiEdit className="icon" /> })
   const { pathname } = useLocation()
-  const selectedNav = pathname.substring(1).replace("%20", " ")
+  const allpath = pathname.substring(1).replace("%20", " ")
+  const selectedNav = allpath.split("/")[0]
 
   const HandleClick = (title: string) => {
     setToggleNavBar(false)

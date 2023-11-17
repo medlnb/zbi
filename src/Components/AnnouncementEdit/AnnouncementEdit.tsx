@@ -4,6 +4,7 @@ import ClipLoader from "react-spinners/ClipLoader";
 import { notify } from '../../Pages/HomePage/HomePage';
 import { AuthContext } from '../../Contexts/UserContext';
 import { BiTrash } from 'react-icons/bi';
+import { io } from 'socket.io-client'
 
 interface AnnouncementType {
   _id: string,
