@@ -23,11 +23,11 @@ const notifyUser = (notificationText = "Thx from enabling notofications!") => {
   if (!("Notification" in window)) {
     alert("Browser does not support notification")
   } else if (Notification.permission === "granted") {
-    const notification = new Notification(notificationText)
+    new Notification(notificationText)
   } else if (Notification.permission !== "denied") {
     Notification.requestPermission().then((permission) => {
       if (permission === 'granted') {
-        const notification = new Notification(notificationText)
+        new Notification(notificationText)
       }
     })
   }
