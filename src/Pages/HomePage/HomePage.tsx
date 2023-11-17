@@ -33,7 +33,8 @@ export const notify = (toastType: "success" | "info" | "warn" | "error", toastMs
 //   }
 // }
 function HomePage() {
-//  notifyUser()
+  //  notifyUser()
+  new Notification("kaka")
   return (
     <div className='homepage--container'>
       <ClassesContextProvider>
