@@ -34,7 +34,7 @@ export const notify = (toastType: "success" | "info" | "warn" | "error", toastMs
 // }
 function HomePage() {
   //  notifyUser()
-  new Notification("kaka")
+  // new Notification("kaka")
   return (
     <div className='homepage--container'>
       <ClassesContextProvider>
