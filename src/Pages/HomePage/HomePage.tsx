@@ -7,7 +7,7 @@ import { TasksContextProvider } from '../../Contexts/TaskContext'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { ClassesContextProvider } from '../../Contexts/Class'
-import { useEffect } from 'react'
+// import { useEffect } from 'react'
 
 export const notify = (toastType: "success" | "info" | "warn" | "error", toastMsg: string) =>
   toast[toastType](`${toastMsg}`, {
@@ -35,9 +35,9 @@ export const notify = (toastType: "success" | "info" | "warn" | "error", toastMs
 // }
 function HomePage() {
   //  notifyUser()
-  useEffect(() => {
-    new Notification("kaka")
-  }, [])
+  // useEffect(() => {
+  //   new Notification("kaka")
+  // }, [])
   return (
     <div className='homepage--container'>
       <ClassesContextProvider>
