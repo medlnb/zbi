@@ -7,6 +7,9 @@ import { TasksContextProvider } from '../../Contexts/TaskContext'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { ClassesContextProvider } from '../../Contexts/Class'
+import { useContext } from 'react'
+import { AuthContext } from '../../Contexts/UserContext'
+import { useNavigate } from 'react-router-dom'
 // import { useEffect } from 'react'
 
 export const notify = (toastType: "success" | "info" | "warn" | "error", toastMsg: string) =>
@@ -34,10 +37,15 @@ export const notify = (toastType: "success" | "info" | "warn" | "error", toastMs
 //   }
 // }
 function HomePage() {
+  const { user } = useContext(AuthContext)
+  const navigate = useNavigate()
   //  notifyUser()
   // useEffect(() => {
   //   new Notification("kaka")
   // }, [])
+  console.log(user)
+  if (!user.username)
+    navigate("/signup")
   return (
     <div className='homepage--container'>
       <ClassesContextProvider>

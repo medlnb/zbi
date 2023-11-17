@@ -4,7 +4,7 @@
   flex-direction: row;
   height: 100vh;
 }
-.welcomePage--container input{
+.welcomePage--container input {
   color: black;
 }
 
@@ -25,4 +25,22 @@
   width: 20rem;
   max-width: 100%;
   margin: 5rem 0;
+}
+@media (max-width: 700px) {
+  .welcomePage--container {
+    background: #545454;
+    flex-direction: column;
+  }
+  .welcomePage--right,
+  .welcomePage--left {
+    width: 100%;
+    background: #545454;
+  }
+  .welcomePage--left {
+    height: 8rem;
+  }
+  .welcomePage--logo {
+    width: 5rem;
+    margin: 1rem;
+  }
 }
