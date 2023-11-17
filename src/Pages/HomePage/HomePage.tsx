@@ -33,7 +33,7 @@ const notifyUser = (notificationText = "Thx from enabling notofications!") => {
   }
 }
 function HomePage() {
- notifyUser()
+//  notifyUser()
   return (
     <div className='homepage--container'>
       <ClassesContextProvider>
