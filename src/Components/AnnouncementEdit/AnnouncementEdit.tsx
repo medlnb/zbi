@@ -4,6 +4,7 @@ import ClipLoader from "react-spinners/ClipLoader";
 import { notify } from '../../Pages/HomePage/HomePage';
 import { AuthContext } from '../../Contexts/UserContext';
 import { BiTrash } from 'react-icons/bi';
+import PropagateLoader from 'react-spinners/PropagateLoader';
 // import { io } from 'socket.io-client'
 
 interface AnnouncementType {
@@ -15,7 +16,12 @@ interface AnnouncementType {
 
 
 function AnnouncementEdit() {
-  const [annous, setAnnous] = useState([])
+  const [annous, setAnnous] = useState([{
+    _id: "####",
+    Publisher: "####",
+    Content: "####",
+    Date: new Date()
+  }])
   useEffect(() => {
     const getData = async () => {
       const response = await fetch("https://student-space-backend.onrender.com/api/Announcement")
@@ -74,7 +80,7 @@ function AnnouncementEdit() {
     <div className='editclass--container'>
       <div className='taskedit--create'>
         <div className='taskedit--title'>
-          <h3>Add File</h3>
+          <h3>Add Anoucement</h3>
         </div>
         <form className='taskedit--body editclass--body' onSubmit={HandleSubmit}>
           <input
@@ -95,10 +101,17 @@ function AnnouncementEdit() {
           </button>
         </form>
       </div>
-      {!(annous.length == 0) &&
+      {!(annous.length === 0) && (annous[0]._id === "####") && 
+        <PropagateLoader
+          color={"white"}
+        size={20}
+        className='loader--anouc'
+        />
+      }
+      {!(annous.length === 0) && (annous[0]._id !== "####") &&
         <div className='taskedit--create'>
           <div className='taskedit--title'>
-            <h3>Delete Tasks</h3>
+            <h3>Delete Anouccements</h3>
           </div>
           <div className='taskedit--body'>
             {TasksToDelete}

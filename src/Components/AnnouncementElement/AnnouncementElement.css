@@ -1,5 +1,6 @@
 .announcementelement--container{
   padding: .4rem;
+  width: 100%;
 }
 .AnnouncementElement--body{
   padding: 1rem;
