@@ -43,7 +43,6 @@ function HomePage() {
   // useEffect(() => {
   //   new Notification("kaka")
   // }, [])
-  console.log(user)
   if (!user.username)
     navigate("/signup")
   return (

@@ -24,6 +24,7 @@ function Announcement() {
     }
     getData()
   }, [])
+
   const Announcements = AnnouncementsData.map((element, index) => (
     <AnnouncementElement
       key={index}
@@ -37,13 +38,15 @@ function Announcement() {
     <div className='sub--main--container'>
       <h1 className='sub--main--title'>Announcement</h1>
       <div className='flex--it'>
-      {AnnouncementsData[0].Publisher === "####" ?
-        <PropagateLoader
-          color={"white"}
-          loading={true}
-          size={20}
-        />
-      :
+        {AnnouncementsData.length === 0 ?
+        <p>Nothing New.</p>  
+          :(AnnouncementsData[0].Publisher === "####") ?
+          <PropagateLoader
+            color={"white"}
+            loading={true}
+            size={20}
+          />
+        :
           Announcements}
       </div>
     </div>

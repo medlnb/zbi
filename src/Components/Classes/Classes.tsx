@@ -2,6 +2,7 @@ import { useContext } from 'react'
 import './Classes.css'
 import { ClassesContext } from '../../Contexts/Class'
 import Class from '../Class/Class'
+import PropagateLoader from 'react-spinners/PropagateLoader'
 
 interface ClassType {
   Module: string,
@@ -11,12 +12,12 @@ interface ClassType {
 }
 function Classes() {
   const { state } = useContext(ClassesContext)
-
+  let loading = false
   if (!state)
     return
 
   if (state[0][0].Module == "default_value")
-    return
+    loading = true
 
   const classesData: ClassType[] = []
 
@@ -35,9 +36,19 @@ function Classes() {
   return (
     <div className='sub--main--container'>
       <h1 className='sub--main--title'>Classes</h1>
-      <div className='classes--container'>
-        {classes}
-      </div>
+      {loading ?
+        <div className='loader--container'>
+          <PropagateLoader
+            color={"white"}
+            loading={true}
+            size={20}
+          />
+        </div>
+        :
+        <div className='classes--container'>
+          {classes}
+        </div>
+      }
     </div>
   )
 }

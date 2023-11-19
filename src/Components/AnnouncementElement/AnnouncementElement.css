@@ -1,7 +1,12 @@
-.announcementelement--container{
-  padding: .4rem;
+.announcementelement--container {
+  padding: 0.4rem;
   width: 100%;
 }
-.AnnouncementElement--body{
+.AnnouncementElement--body {
   padding: 1rem;
+}
+@media (max-width: 700px) {
+  .AnnouncementElement--body {
+    padding: 2rem;
+  }
 }

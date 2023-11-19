@@ -8,6 +8,8 @@ import { useContext } from 'react'
 import { AuthContext } from '../../Contexts/UserContext'
 import Announcement from '../Announcement/Announcement'
 import TaskEdit from '../TaskEdit/TaskEdit'
+import AnnouncementEdit from '../AnnouncementEdit/AnnouncementEdit'
+import ScheduleEdit from '../ScheduleEdit/ScheduleEdit'
 
 function Redirect() {
   const navigate = useNavigate()
@@ -34,7 +36,9 @@ function Main() {
         <Route path="/" element={<Redirect />} />
         <Route path="My classes" element={<Classes />} />
         <Route path="Announcement" element={<Announcement />} />
-        <Route path="Edit/*" element={isTeacher ? <Edit /> : ""} />
+        <Route path="Edit/*" element={isTeacher ? <Edit /> : ""}>
+        </Route>
+
         <Route path="My classes/:selected" element={<Module />} />
       </Routes>
     </div>

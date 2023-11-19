@@ -4,6 +4,7 @@
   height: 100%;
   font-size: 1.15rem;
   white-space: nowrap;
+  box-shadow: 1px 0px 10px #423a52;
 }
 
 .navbar--logo {
